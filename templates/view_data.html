@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center aler alert-info">Office Informations</h1>
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>department</th>
+                <th>image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for office in office_data %}
+            <tr>
+                <td>{{office.id}}</td>
+                <td>{{office.name}}</td>
+                <td>{{office.department}}</td>           
+                <td>
+                    <a href="{{ office.profileImg.url }}" target="_blank">
+                        <img src="{{ office.profileImg.url }}" alt="" style="height: 100px; width: 100px;">
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>
