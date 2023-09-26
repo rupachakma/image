@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from herapp.models import Office
 
 # Create your views here.
@@ -27,3 +27,7 @@ def home(request):
 def view_data(request):
     office_data = Office.objects.all()
     return render(request,'view_data.html', {'office_data': office_data})
+def de(request, x):
+    d=Office.objects.get(id=x)
+    d.delete()
+    return redirect("view_data")

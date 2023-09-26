@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center aler alert-info">Office Informations</h1>
+    <h1 class="text-center aler alert-info">Office Informations</h1>
     <table class="table">
         <thead class="table-dark">
             <tr>
@@ -16,6 +16,7 @@
                 <th>name</th>
                 <th>department</th>
                 <th>image</th>
+                <th>action</th>
             </tr>
         </thead>
         <tbody>
@@ -29,10 +30,13 @@
                         <img src="{{ office.profileImg.url }}" alt="" style="height: 100px; width: 100px;">
                     </a>
                 </td>
+                <td><a href="/delete/{{office.id}}"class="btn btn-danger">delete</a></td>
+                
             </tr>
             {% endfor %}
         </tbody>
     </table>
     </div>
+    
 </body>
 </html>
